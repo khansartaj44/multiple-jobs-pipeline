@@ -11,12 +11,14 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    needs: quality
     steps:
       - name: Run Tests
         run: echo " Running tests"
 
   build:
     runs-on: ubuntu-latest
+    needs: test
     steps:
       - name: Build applications
         run: echo "Building Applications"
