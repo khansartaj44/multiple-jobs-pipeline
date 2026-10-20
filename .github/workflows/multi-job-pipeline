@@ -1,0 +1,22 @@
+# Multiple Jobs Pipeline
+name: Multiple Job Pipeline
+on: push
+
+jobs:
+  quality: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Quality Checks
+        run: echo " Checking code quality"
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Tests
+        run: echo " Running tests"
+
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Build applications
+          run: echo "Building Applications"
